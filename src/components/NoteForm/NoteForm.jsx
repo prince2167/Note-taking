@@ -1,13 +1,15 @@
 import { useState } from "react";
 import classes from "./NoteForm.module.css";
 import uuid from "react-uuid";
-import { useNote } from "../../contexts/note-context";
+import { useNotes } from "../../contexts/note-context";
 import { toast } from "react-toastify";
 
 const NoteForm = ({ setShowModal }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const { state, dispatch } = useNote();
+  const { dispatch } = useNotes();
+
+  var today = new Date();
 
   const addNoteHandler = (event) => {
     event.preventDefault();
@@ -18,11 +20,18 @@ const NoteForm = ({ setShowModal }) => {
       tag: "",
       bgColor: "",
       isPinned: false,
-      createdOn: Date.now(),
+      createdOn:
+        today.getDate() +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getFullYear(),
     };
 
     if (title && description) {
+      setShowModal(false);
       dispatch({ type: "CREATE_NEW_NOTE", payload: newNote });
+      toast.success("New note created");
     } else {
       toast.error("This field can not be empty!!");
     }
