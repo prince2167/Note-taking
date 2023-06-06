@@ -1,7 +1,7 @@
 .sidebarContainer {
   border: 1px solid black;
-  width: 15rem;
-  height: calc(100vh - 3.2rem);
+  width: 20rem;
+  height: calc(100vh - 4.2rem);
 }
 
 .linksContainer {
