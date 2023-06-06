@@ -13,6 +13,6 @@ const NoteProvider = ({ children }) => {
   );
 };
 
-const useNote = () => useContext(NoteContext);
+const useNotes = () => useContext(NoteContext);
 
-export { NoteProvider, useNote };
+export { NoteProvider, useNotes };
