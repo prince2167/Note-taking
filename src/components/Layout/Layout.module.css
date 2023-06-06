@@ -1,4 +1,9 @@
 .layout {
   display: flex;
   gap: 40px;
+  margin-top: 1rem;
+}
+
+.main{
+  width: 100%;
 }
