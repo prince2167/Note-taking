@@ -8,6 +8,7 @@ import NoteCard from "./NoteCard/NoteCard";
 import EditForm from "./EditForm/EditForm";
 import LabelDialouge from "./LabelDialouge/LabelDialouge";
 import ColorPalette from "./ColorPalette/ColorPalette";
+import Searchbar from "./Searchbar/Searchbar";
 export {
   Sidebar,
   Navbar,
@@ -19,4 +20,5 @@ export {
   EditForm,
   LabelDialouge,
   ColorPalette,
+  Searchbar,
 };
