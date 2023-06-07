@@ -1,0 +1,44 @@
+.notecardContainer {
+  width: 500px;
+  padding: 10px 15px 0 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardHeader strong {
+  font-size: 18px;
+}
+.notecardContainer p {
+  margin: 5px 0 15px 0;
+  font-size: 17px;
+}
+
+.label {
+  background-color: #d9cea9;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.cardFooter p {
+  color: #9a9a9a;
+  font-size: 18px;
+}
+
+.iconsGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.notecardContainer button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
