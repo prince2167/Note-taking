@@ -1,0 +1,74 @@
+.formContainer {
+  width: 300px;
+}
+.formContainer h2 {
+  text-align: center;
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+.formContainer form {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title,
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title p,
+.description p {
+  font-size: 18px;
+}
+
+.formContainer input,
+.formContainer textarea {
+  border: none;
+  background-color: #e5e5e5;
+  padding: 10px;
+  outline: none;
+  border-radius: 3px;
+}
+
+.title input:focus,
+.formContainer textarea:focus {
+  border: 2px solid #5348c7;
+}
+
+.formContainer textarea {
+  height: 5rem;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+
+.cancelButton,
+.addButton {
+  padding: 5px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+
+.addButton {
+  background-color: #5348c7;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.addButton:hover {
+  background-color: #665cd7;
+}
+
+.cancelButton {
+  border: 1.5px solid black;
+}
