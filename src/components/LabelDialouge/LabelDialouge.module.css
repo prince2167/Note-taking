@@ -1,0 +1,37 @@
+.labelOverlay {
+  background-color: rgb(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.labelDialog {
+  display: flex;
+  gap: 10px;
+  background-color: #fff;
+  padding: 0.5rem;
+  width: 8rem;
+  position: relative;
+  top: -10px;
+}
+.labelDialog input {
+  width: 100%;
+  outline: none;
+  text-indent: 6px;
+}
+
+.labelDialog input:focus {
+  border: 1.5px solid #5348c7;
+  border-radius: 3px;
+}
+.labelDialog button {
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #5348c7;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
