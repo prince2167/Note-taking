@@ -1,6 +1,6 @@
 import classes from "./Layout.module.css";
 import { Outlet } from "react-router-dom";
-import { Navbar, Sidebar } from "../../components/index";
+import { Navbar, Searchbar, Sidebar } from "../../components/index";
 
 const Layout = () => {
   return (
@@ -9,6 +9,7 @@ const Layout = () => {
       <div className={classes.layout}>
         <Sidebar />
         <main className={classes.main}>
+          <Searchbar />
           <Outlet />
         </main>
       </div>
