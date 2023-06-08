@@ -1,4 +1,10 @@
-export const initialState = { notes: [], archive: [], trash: [] };
+export const initialState = {
+  notes: [],
+  archive: [],
+  trash: [],
+  sortBy: "",
+  filters: [],
+};
 
 export const noteReducer = (state, action) => {
   const { type, payload } = action;
@@ -75,6 +81,25 @@ export const noteReducer = (state, action) => {
         notes: payload.updatedNotes,
         archive: payload.updatedArchive,
         trash: payload.updatedTrash,
+      };
+    }
+    case "SORT_BY": {
+      return {
+        ...state,
+        sortBy: payload,
+      };
+    }
+    case "FILTERS": {
+      return {
+        ...state,
+        filters: payload,
+      };
+    }
+    case "CLEAR_FILTERS": {
+      return {
+        ...state,
+        sortBy: initialState.sortBy,
+        filters: initialState.filters,
       };
     }
     default: {
