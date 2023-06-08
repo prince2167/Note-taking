@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d0d0d0;
+  widows: 100%;
+  padding: 0.3rem;
+  max-width: 600px;
+  width: 100%;
+}
+.container input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.container button {
+  border: none;
+  background: transparent;
+}
+
+.filterButton {
+  cursor: pointer;
+  color: #9A9A9A;
+  font-weight: bolder;
+}
