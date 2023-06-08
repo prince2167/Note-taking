@@ -6,8 +6,9 @@ import { CgProfile } from "react-icons/cg";
 import { IoIosColorPalette } from "react-icons/io";
 import { BiArchiveIn, BiArchiveOut } from "react-icons/bi";
 import { RiEditBoxLine } from "react-icons/ri";
-import { AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineSearch } from "react-icons/ai";
 import { FaTrashRestoreAlt } from "react-icons/fa";
+import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
 export {
   GrHomeRounded,
@@ -23,4 +24,6 @@ export {
   RiEditBoxLine,
   AiOutlineDelete,
   FaTrashRestoreAlt,
+  AiOutlineSearch,
+  TbAdjustmentsHorizontal,
 };
