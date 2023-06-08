@@ -1,25 +1,33 @@
 import { useNotes } from "../../contexts/note-context";
+import { filterNotes, getFilteredNotes, getSortedNotes } from "../../utils";
 import { NoteCard } from "../index";
 import classes from "./NoteList.module.css";
 
 const NoteList = () => {
-  const { state, dispatch } = useNotes();
-  const { notes } = state;
+  const { state, searchTerm, applyFilter } = useNotes();
+  const { notes, sortBy, filters } = state;
 
-  const pinnedNotes = notes?.filter((note) => note?.isPinned);
-  const otherNotes = notes?.filter((note) => !note?.isPinned);
+  const sortedNotes = applyFilter ? getSortedNotes(notes, sortBy) : notes;
+  const filteredNotes = applyFilter
+    ? getFilteredNotes(sortedNotes, filters)
+    : notes;
+  const pinnedNotes = filteredNotes?.filter((note) => note?.isPinned);
+  const otherNotes = filteredNotes?.filter((note) => !note?.isPinned);
+
+  const filteredOtherNotes = filterNotes(otherNotes, searchTerm);
+  const filteredPinnedNotes = filterNotes(pinnedNotes, searchTerm);
 
   return (
     <div className={classes.noteList}>
-      {pinnedNotes?.length > 0 && <h3> Pinned Notes</h3>}
-      {pinnedNotes.map((note) => (
+      {filteredPinnedNotes?.length > 0 && <h3> Pinned Notes</h3>}
+      {filteredPinnedNotes?.map((note) => (
         <NoteCard note={note} key={note.id} />
       ))}
 
-      {pinnedNotes?.length > 0 && otherNotes?.length > 0 && (
+      {filteredPinnedNotes?.length > 0 && filteredOtherNotes?.length > 0 && (
         <h3> Other Notes</h3>
       )}
-      {otherNotes?.map((note) => (
+      {filteredOtherNotes?.map((note) => (
         <NoteCard note={note} key={note.id} />
       ))}
     </div>
