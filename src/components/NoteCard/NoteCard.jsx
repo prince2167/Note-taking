@@ -158,7 +158,7 @@ const NoteCard = ({ note }) => {
           </div>
         </div>
       </div>
-      
+
       {showPalette && (
         <ColorPalette noteId={id} setShowPalette={setShowPalette} />
       )}
