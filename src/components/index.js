@@ -9,6 +9,7 @@ import EditForm from "./EditForm/EditForm";
 import LabelDialouge from "./LabelDialouge/LabelDialouge";
 import ColorPalette from "./ColorPalette/ColorPalette";
 import Searchbar from "./Searchbar/Searchbar";
+import Filter from "./Filter/Filter";
 export {
   Sidebar,
   Navbar,
@@ -21,4 +22,5 @@ export {
   LabelDialouge,
   ColorPalette,
   Searchbar,
+  Filter,
 };
