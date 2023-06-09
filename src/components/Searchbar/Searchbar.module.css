@@ -1,3 +1,10 @@
+.searchbarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+}
 .container {
   display: flex;
   align-items: center;
@@ -5,9 +12,9 @@
   border: 1px solid #d0d0d0;
   widows: 100%;
   padding: 0.3rem;
-  max-width: 600px;
   width: 100%;
 }
+
 .container input {
   border: none;
   outline: none;
@@ -22,6 +29,12 @@
 
 .filterButton {
   cursor: pointer;
-  color: #9A9A9A;
+  color: #9a9a9a;
   font-weight: bolder;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 0 1rem;
+  }
 }
