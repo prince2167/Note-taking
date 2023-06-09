@@ -43,3 +43,13 @@
   background: transparent;
   cursor: pointer;
 }
+
+@media (max-width: 364px) {
+  .notecardContainer {
+    max-width: 320px;
+    width: 100%;
+  }
+  .iconsGroup {
+    flex-wrap: wrap;
+  }
+}
