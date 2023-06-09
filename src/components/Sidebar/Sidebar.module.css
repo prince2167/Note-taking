@@ -32,3 +32,15 @@
   border-radius: 2px;
   cursor: pointer;
 }
+
+@media (max-width: 890px) {
+  .sidebarContainer {
+    width: 100%;
+    height: 18rem;
+  }
+  .linksContainer {
+    padding-left: 15px;
+  }
+}
+@media (max-width: 620px) {
+}
