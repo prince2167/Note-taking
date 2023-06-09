@@ -7,10 +7,22 @@
 .labelPage h2 {
   margin: 20px 0 0 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: start;
 }
 .labelNotesList {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 8px;
+}
+
+@media (max-width: 620px) {
+  .labelNotesList {
+    margin: 0 1rem;
+  }
+}
+@media (max-width: 633px) {
+  .labelPage h2{
+    text-align: center;
+  }
 }
