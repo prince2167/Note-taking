@@ -8,7 +8,7 @@ const Searchbar = () => {
 
   const [showModal, setShowModal] = useState(false);
   return (
-    <>
+    <div className={classes.searchbarWrapper}>
       <div className={classes.container}>
         <button>
           <AiOutlineSearch size="22" />
@@ -30,7 +30,7 @@ const Searchbar = () => {
       <Modal showModal={showModal} setShowModal={setShowModal}>
         <Filter setShowModal={setShowModal} />
       </Modal>
-    </>
+    </div>
   );
 };
 
