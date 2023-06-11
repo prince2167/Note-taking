@@ -19,7 +19,7 @@ const Navbar = ({ showLinks, setShowLinks }) => {
             <RxHamburgerMenu size="22" />
           </button>
           <NavLink to="/" className={classes.logo}>
-            Note-Taking App
+            Note-Taking 
           </NavLink>
         </div>
 
