@@ -1,12 +1,24 @@
 .trashPage {
   width: 100%;
   display: flex;
-  justify-content: center;
-  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .trashNoteList {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+button {
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 620px) {
+  .trashNoteList {
+    margin: 0 1rem;
+  }
 }
