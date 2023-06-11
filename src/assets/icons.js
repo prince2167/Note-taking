@@ -6,11 +6,14 @@ import { CgProfile } from "react-icons/cg";
 import { IoIosColorPalette } from "react-icons/io";
 import { BiArchiveIn, BiArchiveOut } from "react-icons/bi";
 import { RiEditBoxLine } from "react-icons/ri";
-import { AiOutlineDelete, AiOutlineSearch } from "react-icons/ai";
+import {
+  AiOutlineDelete,
+  AiOutlineSearch,
+  AiOutlinePlus,
+} from "react-icons/ai";
 import { FaTrashRestoreAlt } from "react-icons/fa";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { SiMicrosoftonenote } from "react-icons/si";
 
 export {
   GrHomeRounded,
@@ -29,5 +32,5 @@ export {
   AiOutlineSearch,
   TbAdjustmentsHorizontal,
   RxHamburgerMenu,
-  SiMicrosoftonenote,
+  AiOutlinePlus,
 };
