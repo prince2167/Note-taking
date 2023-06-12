@@ -9,8 +9,6 @@ const NoteForm = ({ setShowModal }) => {
   const [description, setDescription] = useState("");
   const { dispatch } = useNotes();
 
-  var today = new Date();
-
   const addNoteHandler = (event) => {
     event.preventDefault();
     const newNote = {
@@ -20,12 +18,7 @@ const NoteForm = ({ setShowModal }) => {
       tag: "",
       bgColor: "",
       isPinned: false,
-      createdOn:
-        today.getDate() +
-        "/" +
-        (today.getMonth() + 1) +
-        "/" +
-        today.getFullYear(),
+      createdOn: new Date().toString(),
     };
 
     if (title && description) {
