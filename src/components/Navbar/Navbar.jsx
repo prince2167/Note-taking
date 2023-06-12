@@ -2,24 +2,18 @@ import { useState } from "react";
 import classes from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import { Modal, NoteForm } from "../index";
-import {
-  RxHamburgerMenu,
-  CgProfile,
-  SiMicrosoftonenote,
-} from "../../assets/icons";
-import { useWindowSize } from "../../hooks/useWindowSize";
+import { RxHamburgerMenu, CgProfile, AiOutlinePlus } from "../../assets/icons";
 const Navbar = ({ showLinks, setShowLinks }) => {
   const [showModal, setShowModal] = useState(false);
-  const { width } = useWindowSize();
   return (
     <>
       <nav>
         <div className={classes.logoContainer}>
           <button onClick={() => setShowLinks(!showLinks)}>
-            <RxHamburgerMenu size="22" />
+            <RxHamburgerMenu size="18" />
           </button>
           <NavLink to="/" className={classes.logo}>
-            Note-Taking 
+            Note-Taking
           </NavLink>
         </div>
 
@@ -28,14 +22,12 @@ const Navbar = ({ showLinks, setShowLinks }) => {
             className={classes.createNote}
             onClick={() => setShowModal(true)}
           >
-            Create new note
-            {/* <SiMicrosoftonenote size="20" /> */}
+            <AiOutlinePlus size="20" />
           </button>
-          {width < 890 && (
-            <NavLink to="profile">
-              <CgProfile size="20" />
-            </NavLink>
-          )}
+
+          <NavLink to="profile">
+            <CgProfile size="18" />
+          </NavLink>
         </div>
       </nav>
 
