@@ -1,4 +1,5 @@
 import Sidebar from "./Sidebar/Sidebar";
+import MobileSidebar from "./Sidebar/MobileSidebar"; 
 import Layout from "./Layout/Layout";
 import Navbar from "./Navbar/Navbar";
 import Modal from "./Modal/Modal";
@@ -23,4 +24,5 @@ export {
   ColorPalette,
   Searchbar,
   Filter,
+  MobileSidebar,
 };
