@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { useNotes } from "../../contexts/note-context";
 import { sorts } from "../../utils/data";
 import classes from "./Filter.module.css";
@@ -27,6 +28,7 @@ const Filter = ({ setShowModal }) => {
   const applyfilterHandler = () => {
     setShowModal(false);
     setApplyFilter(true);
+    toast.success("Filter successfully apply!!");
   };
 
   return (
@@ -50,17 +52,19 @@ const Filter = ({ setShowModal }) => {
 
         <div className={classes.filterByLabel}>
           <strong>Select Label</strong>
-          {tags.map((tag, index) => (
-            <label key={index} className={classes.filters}>
-              <input
-                type="checkbox"
-                value={tag}
-                checked={filters.includes(tag)}
-                onChange={filterByTagsHandler}
-              />
-              <p>{tag}</p>
-            </label>
-          ))}
+          {tags
+            .filter((tag) => tag !== "")
+            .map((tag, index) => (
+              <label key={index} className={classes.filters}>
+                <input
+                  type="checkbox"
+                  value={tag}
+                  checked={filters.includes(tag)}
+                  onChange={filterByTagsHandler}
+                />
+                <p>{tag}</p>
+              </label>
+            ))}
         </div>
       </div>
       <div className={classes.buttonGroup}>
