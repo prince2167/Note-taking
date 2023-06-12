@@ -39,12 +39,13 @@ const LabelDialouge = ({ note, setShowLabel }) => {
         onClick={() => setShowLabel(false)}
       ></div>
       <form className={classes.labelDialog} onSubmit={labelHandler}>
+        <button onClick={() => setShowLabel(false)}>X</button>
         <input
           type="text"
           value={labelInput}
           onChange={(event) => setLabelInput(event.target.value)}
         />
-        <button type="submit">+</button>
+        <button type="submit">Add</button>
       </form>
     </>
   );
