@@ -38,7 +38,7 @@ const NoteCard = ({ note }) => {
       type: "ADD_TO_ARCHIVE",
       payload: { updatedNotes, updatedTrash, archive },
     });
-    toast.success("Note add to archive");
+    toast.success("Note move archive");
   };
   const trashHandler = (id) => {
     const updatedNotes = notes.filter((note) => note.id !== id);
@@ -51,7 +51,7 @@ const NoteCard = ({ note }) => {
       type: "ADD_TO_TRASH",
       payload: { updatedNotes, updatedArchive, trash },
     });
-    toast.success("Note add to trash");
+    toast.success("Note move trash");
   };
 
   const unArchiveHandler = (id) => {
@@ -90,6 +90,7 @@ const NoteCard = ({ note }) => {
       type: "PIN_NOTE",
       payload: { updatedNotes, updatedArchive, updatedTrash },
     });
+    toast.success("Note pinned");
   };
 
   const unPinHandler = (id) => {
@@ -108,6 +109,8 @@ const NoteCard = ({ note }) => {
       type: "UNPIN_NOTE",
       payload: { updatedNotes, updatedArchive, updatedTrash },
     });
+
+    toast.success("Note unpinned");
   };
   return (
     <>
