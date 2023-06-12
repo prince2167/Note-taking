@@ -23,24 +23,33 @@ const NoteCard = ({ note }) => {
   const { notes, trash, archive } = state;
   const { id, title, description, tag, bgColor, isPinned, createdOn } = note;
 
-  const isInArchive = archive?.find(({ id }) => id === note.id);
-  const isInTrash = trash?.find(({ id }) => id === note.id);
+  const isInArchive =
+    archive.length > 0 && archive?.find(({ id }) => id === note.id);
+  const isInTrash =
+    trash.length > 0 && trash?.find((trashNote) => trashNote?.id === note?.id);
 
   const archiveHandler = (id) => {
     const updatedNotes = notes.filter((note) => note.id !== id);
-    const archive = notes.find((note) => note.id === id);
+    const updatedTrash = trash.filter((note) => note.id !== id);
+    const archive = notes.includes(notes.find((note) => note.id === id))
+      ? notes.find((note) => note.id === id)
+      : trash.find((note) => note.id === id);
     dispatch({
       type: "ADD_TO_ARCHIVE",
-      payload: { updatedNotes, archive },
+      payload: { updatedNotes, updatedTrash, archive },
     });
     toast.success("Note add to archive");
   };
   const trashHandler = (id) => {
     const updatedNotes = notes.filter((note) => note.id !== id);
-    const trash = notes.find((note) => note.id === id);
+    const updatedArchive = archive.filter((note) => note.id !== id);
+    const trash = notes.includes(notes.find((note) => note.id === id))
+      ? notes.find((note) => note.id === id)
+      : archive.find((note) => note.id === id);
+
     dispatch({
       type: "ADD_TO_TRASH",
-      payload: { updatedNotes, trash },
+      payload: { updatedNotes, updatedArchive, trash },
     });
     toast.success("Note add to trash");
   };
@@ -124,11 +133,11 @@ const NoteCard = ({ note }) => {
         <div className={classes.cardFooter}>
           <p>Created on {createdOn}</p>
           <div className={classes.iconsGroup}>
-            <button onClick={() => setShowPalette(true)}>
+            <button onClick={() => setShowPalette(!showPalette)}>
               <IoIosColorPalette size="20" />
             </button>
 
-            <button onClick={() => setShowLabel(true)}>
+            <button onClick={() => setShowLabel(!showLabel)}>
               <MdLabelOutline size="20" />
             </button>
 
