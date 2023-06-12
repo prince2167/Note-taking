@@ -5,6 +5,11 @@ nav {
   padding: 0.7rem 3rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
 }
 
 .logoContainer {
@@ -19,14 +24,16 @@ nav {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
 }
-
+.logoContainer button {
+  margin-top: 4px;
+}
 nav a {
   color: black;
 }
 
 .links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
 button {
@@ -35,10 +42,10 @@ button {
   cursor: pointer;
 }
 .createNote {
-  background-color: #5348c7;
-  color: #ffffff;
-  padding: 5px;
+  color: #5348c7;
+  padding: 3px;
   border-radius: 3px;
+  font-weight: bold;
 }
 
 @media (max-width: 890px) {
@@ -48,9 +55,15 @@ button {
   .logoContainer {
     gap: 10px;
   }
+  .logo {
+    font-size: 20px;
+  }
 }
 @media (min-width: 890px) {
- nav button {
+  nav button {
+    display: none;
+  }
+  .links {
     display: none;
   }
 }
