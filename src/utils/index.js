@@ -1,8 +1,8 @@
 export const filterNotes = (notes, searchTerm) => {
   const filteredNotes = notes?.filter(
     (note) =>
-      note.title.toLowerCase().includes(searchTerm?.toLowerCase()) ||
-      note.tag?.toLowerCase().includes(searchTerm?.toLowerCase())
+      note?.title.toLowerCase().includes(searchTerm?.toLowerCase()) ||
+      note?.tag?.toLowerCase().includes(searchTerm?.toLowerCase())
   );
   return filteredNotes;
 };
