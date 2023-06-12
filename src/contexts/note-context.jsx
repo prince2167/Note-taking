@@ -17,10 +17,12 @@ const NoteProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [applyFilter, setApplyFilter] = useState(false);
 
+  // console.log(state.notes);
   // local storage
   useEffect(() => {
     localStorage.setItem("state", JSON.stringify(state));
   }, [state]);
+
   return (
     <NoteContext.Provider
       value={{
