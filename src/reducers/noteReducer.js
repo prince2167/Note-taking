@@ -20,6 +20,7 @@ export const noteReducer = (state, action) => {
         ...state,
         notes: payload.updatedNotes,
         archive: [payload.archive, ...state.archive],
+        trash: payload.updatedTrash,
       };
     }
     case "REMOVE_FROM_ARCHIVE": {
@@ -29,11 +30,18 @@ export const noteReducer = (state, action) => {
         archive: payload.updatedArchive,
       };
     }
+    case "CLEAR_ARCHIVE": {
+      return {
+        ...state,
+        archive: [],
+      };
+    }
     case "ADD_TO_TRASH": {
       return {
         ...state,
         notes: payload.updatedNotes,
         trash: [payload.trash, ...state.trash],
+        archive: payload.updatedArchive,
       };
     }
     case "REMOVE_FROM_TRASH": {
@@ -41,6 +49,12 @@ export const noteReducer = (state, action) => {
         ...state,
         notes: [payload.note, ...state.notes],
         trash: payload.updatedTrash,
+      };
+    }
+    case "CLEAR_TRASH": {
+      return {
+        ...state,
+        trash: [],
       };
     }
     case "PIN_NOTE": {
