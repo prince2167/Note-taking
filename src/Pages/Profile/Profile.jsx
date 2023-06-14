@@ -1,6 +1,23 @@
+import { useState } from "react";
+import { useAuth } from "../../contexts/auth-context";
 import classes from "./Profile.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const [error, setError] = useState("");
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const logoutHandler = async () => {
+    setError("");
+    try {
+      await logout();
+      navigate("/login");
+    } catch (error) {
+      setError(error.message);
+      alert(error.message);
+    }
+    toast.success("Logout successfull")
+  };
   return (
     <div className={classes.profilePage}>
       <div className={classes.profileCard}>
@@ -10,15 +27,16 @@ const Profile = () => {
           alt="user"
           className={classes.userImage}
         />
-        <p>
-          <strong>Name: </strong>
-          Prince Singh
-        </p>
-        <p>
-          <strong>Email: </strong>
-          Prince@gmail.com
-        </p>
-        <button className={classes.logoutButton}>Logout</button>
+
+        {user && (
+          <p>
+            <strong>Email: </strong>
+            {user.email}
+          </p>
+        )}
+        <button className={classes.logoutButton} onClick={logoutHandler}>
+          Logout
+        </button>
       </div>
     </div>
   );
