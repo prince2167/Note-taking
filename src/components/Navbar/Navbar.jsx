@@ -1,10 +1,13 @@
 import { useState } from "react";
 import classes from "./Navbar.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Modal, NoteForm } from "../index";
 import { RxHamburgerMenu, CgProfile, AiOutlinePlus } from "../../assets/icons";
+import { useAuth } from "../../contexts/auth-context";
 const Navbar = ({ showLinks, setShowLinks }) => {
   const [showModal, setShowModal] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
   return (
     <>
       <nav>
@@ -20,7 +23,7 @@ const Navbar = ({ showLinks, setShowLinks }) => {
         <div className={classes.links}>
           <button
             className={classes.createNote}
-            onClick={() => setShowModal(true)}
+            onClick={() => (user ? setShowModal(true) : navigate("/login"))}
           >
             <AiOutlinePlus size="20" />
           </button>
