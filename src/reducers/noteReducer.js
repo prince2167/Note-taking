@@ -12,7 +12,7 @@ export const noteReducer = (state, action) => {
     case "CREATE_NEW_NOTE": {
       return {
         ...state,
-        notes: [payload, ...state.notes],
+        notes: [payload, ...state?.notes],
       };
     }
     case "ADD_TO_ARCHIVE": {
