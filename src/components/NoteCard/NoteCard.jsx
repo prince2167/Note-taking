@@ -38,7 +38,7 @@ const NoteCard = ({ note }) => {
       type: "ADD_TO_ARCHIVE",
       payload: { updatedNotes, updatedTrash, archive },
     });
-    toast.success("Note move archive");
+    toast.success("Note move to archive");
   };
   const trashHandler = (id) => {
     const updatedNotes = notes.filter((note) => note.id !== id);
@@ -51,7 +51,7 @@ const NoteCard = ({ note }) => {
       type: "ADD_TO_TRASH",
       payload: { updatedNotes, updatedArchive, trash },
     });
-    toast.success("Note move trash");
+    toast.success("Note move to trash");
   };
 
   const unArchiveHandler = (id) => {
