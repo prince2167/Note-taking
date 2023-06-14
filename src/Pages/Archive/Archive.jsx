@@ -15,9 +15,10 @@ const Archive = () => {
   };
   return (
     <div className={classes.archivePage}>
-      {updatedArchiveNotes.length > 0 && (
+      {updatedArchiveNotes?.length > 0 && (
         <button onClick={clearArchiveHandler}>Clear</button>
       )}
+      {updatedArchiveNotes?.length===0 && <h2>Archive is empty...</h2>}
       <div className={classes.archiveNotesList}>
         {updatedArchiveNotes?.map((note) => (
           <NoteCard note={note} key={note.id} />
