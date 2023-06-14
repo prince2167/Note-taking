@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../contexts/auth-context";
 import classes from "./Profile.module.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const [error, setError] = useState("");
