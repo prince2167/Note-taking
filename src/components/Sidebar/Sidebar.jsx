@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./Sidebar.module.css";
 import {
   GrHomeRounded,
@@ -9,9 +9,13 @@ import {
 } from "../../assets/icons";
 import { useState } from "react";
 import { Modal, NoteForm } from "../../components/index";
+import { SignUp } from "../../Pages/index";
+import { useAuth } from "../../contexts/auth-context";
 
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const getActiveStyle = ({ isActive }) => ({
     borderRight: isActive ? "4px solid red" : "",
   });
@@ -43,8 +47,11 @@ const Sidebar = () => {
             <CgProfile size="25" />
             <p>Profile</p>
           </NavLink>
-
-          <button onClick={() => setShowModal(true)}>Create a new note</button>
+          <button
+            onClick={() => (user ? setShowModal(true) : navigate("/login"))}
+          >
+            Create a new note
+          </button>
         </div>
       </div>
 
