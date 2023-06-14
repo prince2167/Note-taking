@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Layout } from "./components/index";
+import { Layout, ProtectedRoute } from "./components/index";
 import {
   Archive,
   Home,
@@ -20,10 +20,17 @@ function App() {
           <Route path="/label" element={<Label />} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/trash" element={<Trash />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signup" element={<SignUp />} />
         </Route>
-        <Route path="/login" element={LogIn} />
-        <Route path="/signup" element={SignUp} />
       </Routes>
     </>
   );
