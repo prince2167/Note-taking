@@ -1,5 +1,5 @@
 import Sidebar from "./Sidebar/Sidebar";
-import MobileSidebar from "./Sidebar/MobileSidebar"; 
+import MobileSidebar from "./Sidebar/MobileSidebar";
 import Layout from "./Layout/Layout";
 import Navbar from "./Navbar/Navbar";
 import Modal from "./Modal/Modal";
@@ -11,6 +11,7 @@ import LabelDialouge from "./LabelDialouge/LabelDialouge";
 import ColorPalette from "./ColorPalette/ColorPalette";
 import Searchbar from "./Searchbar/Searchbar";
 import Filter from "./Filter/Filter";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 export {
   Sidebar,
   Navbar,
@@ -25,4 +26,5 @@ export {
   Searchbar,
   Filter,
   MobileSidebar,
+  ProtectedRoute,
 };
