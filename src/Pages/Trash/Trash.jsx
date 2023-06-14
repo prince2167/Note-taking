@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { NoteCard } from "../../components/index";
 import { useNotes } from "../../contexts/note-context";
 import { filterNotes } from "../../utils";
@@ -10,7 +11,7 @@ const Trash = () => {
 
   const clearTrashHandler = () => {
     dispatch({ type: "CLEAR_TRASH" });
-    toast.success("clear trash notes!!");
+    toast.success("clear all trash notes");
   };
   return (
     <div className={classes.trashPage}>
