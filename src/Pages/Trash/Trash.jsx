@@ -14,9 +14,10 @@ const Trash = () => {
   };
   return (
     <div className={classes.trashPage}>
-      {updatedTrash.length > 0 && (
+      {updatedTrash?.length > 0 && (
         <button onClick={clearTrashHandler}>Clear</button>
       )}
+      {updatedTrash?.length ===0 && <h2>Trash is empty...</h2>}
       <div className={classes.trashNoteList}>
         {updatedTrash?.map((note) => (
           <NoteCard note={note} key={note.id} />
