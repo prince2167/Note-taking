@@ -11,7 +11,7 @@ const Archive = () => {
 
   const clearArchiveHandler = () => {
     dispatch({ type: "CLEAR_ARCHIVE" });
-    toast.success("Clear archive notes!!");
+    toast.success("Clear all archive notes");
   };
   return (
     <div className={classes.archivePage}>
