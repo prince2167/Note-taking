@@ -21,9 +21,7 @@ const Label = () => {
               {updatedlabeledNotes
                 ?.filter((note) => note?.tag?.toUpperCase() === tag)
                 .map((note) => (
-                  <>
-                    <NoteCard note={note} key={note.id} />
-                  </>
+                  <NoteCard note={note} key={note.id} />
                 ))}
             </div>
           </div>
