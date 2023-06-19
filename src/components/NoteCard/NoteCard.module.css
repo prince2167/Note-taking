@@ -18,6 +18,7 @@
   margin: 5px 0 15px 0;
   font-size: 17px;
   width: 100%;
+  word-wrap: break-word;
 }
 
 .label {
