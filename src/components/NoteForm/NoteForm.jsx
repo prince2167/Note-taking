@@ -18,7 +18,7 @@ const NoteForm = ({ setShowModal }) => {
       tag: "",
       bgColor: "",
       isPinned: false,
-      createdOn: new Date().toString(),
+      createdOn: new Date().toLocaleDateString(),
     };
 
     if (title && description) {
