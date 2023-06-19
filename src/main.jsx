@@ -12,7 +12,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <NoteProvider>
         <AuthProvider>
-          <ToastContainer />
+          <ToastContainer
+            pauseOnHover={false}
+            theme="colored"
+            draggable={true}
+            limit={5}
+            autoClose={3000}
+          />
           <App />
         </AuthProvider>
       </NoteProvider>
