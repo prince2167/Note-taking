@@ -21,7 +21,7 @@ const NoteCard = ({ note }) => {
   const [showPalette, setShowPalette] = useState(false);
   const { state, dispatch } = useNotes();
   const { notes, trash, archive } = state;
-  const { id, title, description, tag, bgColor, isPinned, createdOn } = note;
+  const { id, title, description, tag,  createdOn } = note;
 
   const isInArchive =
     archive.length > 0 && archive?.find(({ id }) => id === note.id);
