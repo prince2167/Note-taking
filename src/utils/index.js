@@ -14,7 +14,7 @@ export const getSortedNotes = (notes, sortBy) => {
   }
   if (sortBy === "Oldest First") {
     const updatedNotes = notes.sort((a, b) => b.currentDate - a.currentDate);
-    return updatedNotes;
+    return updatedNotes.reverse();
   } else {
     return notes;
   }
