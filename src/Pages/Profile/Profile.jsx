@@ -5,19 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Profile = () => {
-  const [error, setError] = useState("");
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const logoutHandler = async () => {
-    setError("");
     try {
       await logout();
       navigate("/login");
     } catch (error) {
-      setError(error.message);
       alert(error.message);
+      toast(error);
     }
-    toast.success("Logout successfull")
+    toast.success("Logged out");
   };
   return (
     <div className={classes.profilePage}>
