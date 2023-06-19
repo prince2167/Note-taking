@@ -6,6 +6,7 @@
 }
 
 .cardHeader {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -16,6 +17,7 @@
 .notecardContainer p {
   margin: 5px 0 15px 0;
   font-size: 17px;
+  width: 100%;
 }
 
 .label {
@@ -26,7 +28,9 @@
 .cardFooter {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 8px;
+  width: 100%;
 }
 .cardFooter p {
   color: #9a9a9a;
