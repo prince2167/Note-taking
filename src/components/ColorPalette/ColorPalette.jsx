@@ -21,8 +21,8 @@ const ColorPalette = ({ noteId, setShowPalette }) => {
       type: "CHANGE_BGCOLOR",
       payload: { updatedNotes, updatedArchive, updatedTrash },
     });
-    toast.success("Background color change successfull !!");
-    setShowPalette(false)
+    toast.success("Background color changed");
+    setShowPalette(false);
   };
   return (
     <>
