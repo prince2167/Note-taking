@@ -40,7 +40,11 @@ const MobileSidebar = () => {
             <p>Profile</p>
           </NavLink>
 
-          <button onClick={() => setShowModal(true)}>Create a new note</button>
+          <button
+            onClick={() => (user ? setShowModal(true) : navigate("/login"))}
+          >
+            Create a new note
+          </button>
         </div>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal}>
