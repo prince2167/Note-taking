@@ -4,6 +4,7 @@
   align-items: center;
   max-width: 600px;
   width: 100%;
+  border-radius: 50px;
 }
 .container {
   display: flex;
@@ -13,6 +14,7 @@
   widows: 100%;
   padding: 0.3rem;
   width: 100%;
+  border-radius: 50px;
 }
 
 .container input {
